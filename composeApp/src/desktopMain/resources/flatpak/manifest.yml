@@ -1,0 +1,31 @@
+app-id: org.lightwork.guapui
+runtime: org.freedesktop.Platform
+runtime-version: "24.08"
+sdk: org.freedesktop.Sdk
+command: /app/bin/org.lightwork.guapui
+finish-args:
+  - --share=network
+  - --socket=x11
+  - --socket=fallback-x11
+  - --device=dri
+modules:
+  - name: org.lightwork.guapui
+    buildsystem: simple
+    build-commands:
+      - cp -r bin/ /app/bin/
+      - cp -r lib/ /app/lib/
+      - mkdir -p /app/share/applications
+      - install -D org.lightwork.guapui.desktop /app/share/applications/org.lightwork.guapui.desktop
+      - mkdir -p /app/share/icons/hicolor/512x512/apps/
+      - cp -r suai.png /app/share/icons/hicolor/512x512/apps/org.lightwork.guapui.png
+    sources:
+      - type: file
+        path: suai.png
+      - type: dir
+        path: "bin/"
+        dest: "bin/"
+      - type: dir
+        path: "lib/"
+        dest: "lib/"
+      - type: file
+        path: org.lightwork.guapui.desktop

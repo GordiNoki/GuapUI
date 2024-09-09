@@ -143,7 +143,7 @@ compose.desktop {
             description = "Простое приложение ддя расписания"
             copyright = "© 2024 Lightwork. All rights reserved."
             vendor = "Lightwork"
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb, TargetFormat.AppImage)
             packageName = "org.lightwork.guapui"
             packageVersion = "1.0.0"
             macOS {
@@ -173,3 +173,4 @@ compose.desktop {
         }
     }
 }
+
